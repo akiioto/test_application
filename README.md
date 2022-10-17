@@ -12,3 +12,7 @@ It displays:
 To run this application locally, clone this repo and run
 
 ```docker compose up --build```
+
+App will be avaliable under 
+
+```http://127.0.0.1:8000```
