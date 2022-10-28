@@ -5,65 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Github user info</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
 </head>
 <body>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Github user info
-                </h1>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-offset-4 is-4">
-                    <form method="POST">
-                        {% csrf_token %}
-                        <div class="field has-addons">
-                            <div class="control is-expanded">
-                                {{ form.name }}
-                            </div>
-                            <div class="control">
-                                <button class="button is-info">
-                                    CheckUser
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <div class="box">
-                        <article class="media">
-                            <div class="media-content">
-                                <div class="content">
-                                    <p>
-                                        <span class="title">{{ user_details.user_email }}</span>
-                                        <br>
-                                        <br> {{ user_details.user_repositories }}
-                                        <br>
-                                        <br> {{ user_details.preferred_lang }}
-                                        <br>
-                                        <br> {{ user_details.events_list }}
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    </footer>
+<form method="POST"> {% csrf_token %}
+<input type="text" placeholder="Enter nickname" name="nickname" />
+    <button typo="submit">Enter</button>
+</form>
+    <h1>{{user_details.user_email}}</h1>
+    <h1>{{user_details.user_repositories}}</h1>
+    <h1>{{user_details.preferred_lang}}</h1>
+    <h1>{{user_details.events_list}}</h1>
 </body>
 </html>
