@@ -42,5 +42,12 @@ pipeline {
                 }
             }
         }
+        stage("Refresh image on ECS") {
+            steps {
+                script {
+                    bat "aws ecs update-service --cluster clusterPD --service Hall --force-new-deployment --region us-east-1"
+                }
+            }
+        }
     }
 }
